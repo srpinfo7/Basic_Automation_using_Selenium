@@ -6,6 +6,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
+/**
+ * 
+ * @author Sameer Ranjan Panda
+ *        Test Script 01
+ *        ************** 
+ *        Test Steps
+ *        1)  Go to http://www.demo.guru99.com/V4/
+          2) Enter valid UserId
+          3) Enter valid Password
+          4) Click Login
+ */
+
 public class Task1 {
     public static void main(String[] args) {
         // Setup ChromeDriver
@@ -28,7 +41,7 @@ public class Task1 {
             driver.findElement(By.name("password")).sendKeys("AnEjEde");
             driver.findElement(By.name("btnLogin")).click();
 
-            // Optional: add checks/assertions here
+           
 
         } catch (Exception e) {
             e.printStackTrace();
