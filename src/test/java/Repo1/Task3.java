@@ -14,7 +14,7 @@ public class Task3 {
 
 	public static void main(String[] args) {
 		Object[][] credentials = ExcelUtils.getTestData("LoginData.xlsx", "LoginData");
-
+		
 		for (Object[] cred : credentials) {
 			String username = cred[0].toString();
 			String password = cred[1].toString();
@@ -58,7 +58,7 @@ public class Task3 {
 	public static void setupDriver() {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
+		options.addArguments("--headless","--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 	}
