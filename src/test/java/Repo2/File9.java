@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class File9 {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
@@ -23,6 +23,8 @@ public class File9 {
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		
+		try {
 
 		driver.get("http://spicejet.com/");
 
@@ -58,8 +60,17 @@ public class File9 {
 		driver.findElement(By.xpath("//div[text()='Continue']/ancestor::div[@data-focusable='true']")).click();
 
 		Thread.sleep(5000);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		finally
+		{
+			driver.quit();
+		}
 
-		driver.quit();
+		
 
 	}
 
